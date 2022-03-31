@@ -180,6 +180,7 @@ class TextPreprocessor(BaseEstimator, TransformerMixin):
             tagged = self._tag(normalized)
             
             normalized = [w for (w, tag) in zip(normalized, tagged) if tag in self.pos_tags]
+            print(tagged, normalized)
             tagged = [tag for tag in tagged if tag in self.pos_tags]
             #normalized = [w for w in normalized if self._get_wordnet_pos(w) in self.pos_tags]
         
